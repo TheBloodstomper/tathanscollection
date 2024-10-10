@@ -1,0 +1,138 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #1f1f1f, #343a40);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #f8f9fa !important;
+}
+
+.navbar-brand:hover {
+  color: #d4d4d4 !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+/* Table Styles */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: #fff;
+  font-weight: 600;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+/* Icon Styles */
+.icon-true {
+  color: #28a745; /* Green color for true values */
+}
+
+.icon-false {
+  color: #dc3545; /* Red color for false values */
+}
+
+/* Center icons */
+.table td.icon-cell {
+  text-align: center;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 30px);
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+/* Category Tabs */
+.nav-tabs .nav-link {
+  color: #343a40;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* Manufacturer, Platform, and Subcategory Tabs */
+.nav-pills .nav-link {
+  margin-right: 5px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Center-align the count column */
+.table th:first-child,
+.table td:first-child {
+  text-align: center;
+  width: 50px;
+}
