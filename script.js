@@ -1,3 +1,5 @@
+// JavaScript to enhance responsiveness and clean up functionality
+
 // Global variables
 let allData = [];
 let selectedCategory = 'All';
@@ -23,54 +25,79 @@ const othersSubcategories = ['Electronics', 'Figures'];
 const allPlatforms = [].concat(...Object.values(manufacturerPlatforms));
 
 // Fetch data from the JSON file
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    allData = data.map(item => {
-      let category = (item['CATEGORY'] || '').trim();
-      let mainCategory = '';
-      let subcategory = '';
-      let manufacturer = '';
-      let platform = '';
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      allData = data.map(item => {
+        let category = (item['CATEGORY'] || '').trim();
+        let mainCategory = '';
+        let subcategory = '';
+        let manufacturer = '';
+        let platform = '';
 
-      if (allPlatforms.map(p => p.toLowerCase()).includes(category.toLowerCase())) {
-        // It's a videogame platform
-        for (const [manu, platforms] of Object.entries(manufacturerPlatforms)) {
-          if (platforms.map(p => p.toLowerCase()).includes(category.toLowerCase())) {
-            manufacturer = manu;
-            platform = category;
-            break;
+        if (allPlatforms.map(p => p.toLowerCase()).includes(category.toLowerCase())) {
+          // It's a videogame platform
+          for (const [manu, platforms] of Object.entries(manufacturerPlatforms)) {
+            if (platforms.map(p => p.toLowerCase()).includes(category.toLowerCase())) {
+              manufacturer = manu;
+              platform = category;
+              break;
+            }
           }
+          mainCategory = 'Videogames';
+        } else if (booksSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
+          // It's a Books subcategory
+          mainCategory = 'Books';
+          subcategory = category;
+        } else if (othersSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
+          // It's an Others subcategory
+          mainCategory = 'Others';
+          subcategory = category;
+        } else {
+          // Category is main category (Books, Others, etc.)
+          mainCategory = category;
         }
-        mainCategory = 'Videogames';
-      } else if (booksSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
-        // It's a Books subcategory
-        mainCategory = 'Books';
-        subcategory = category;
-      } else if (othersSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
-        // It's an Others subcategory
-        mainCategory = 'Others';
-        subcategory = category;
-      } else {
-        // Category is main category (Books, Others, etc.)
-        mainCategory = category;
-      }
 
-      return {
-        ...item,
-        MAIN_CATEGORY: mainCategory,
-        SUBCATEGORY: subcategory,
-        MANUFACTURER: manufacturer,
-        PLATFORM: platform
-      };
+        return {
+          ...item,
+          MAIN_CATEGORY: mainCategory,
+          SUBCATEGORY: subcategory,
+          MANUFACTURER: manufacturer,
+          PLATFORM: platform
+        };
+      });
+
+      createTable(allData); // Display all data initially
+      initializeDataTable();
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
     });
 
-    createTable(allData); // Display all data initially
-    initializeDataTable();
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
+  // Handle table row click for mobile responsiveness
+  const tableRows = document.querySelectorAll('.table tbody tr');
+  tableRows.forEach(row => {
+    row.addEventListener('click', () => {
+      // Add your custom logic here if any action is needed on row click
+      console.log('Row clicked:', row);
+    });
   });
+
+  // Add active state toggling for nav-tabs and nav-pills
+  const tabLinks = document.querySelectorAll('.nav-tabs .nav-link, .nav-pills .nav-link');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Remove active class from all siblings
+      const siblings = this.parentElement.children;
+      for (let sibling of siblings) {
+        sibling.classList.remove('active');
+      }
+      // Add active class to clicked tab
+      this.classList.add('active');
+    });
+  });
+});
 
 // Function to create the table
 function createTable(data) {
@@ -151,23 +178,23 @@ function createTable(data) {
 
 // Function to initialize DataTable
 function initializeDataTable() {
-    $('#data-table').DataTable({
-      paging: true,
-      searching: true,
-      ordering: true,
-      info: false,
-      autoWidth: false,
-      pageLength: 25, // Default number of rows per page
-      lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]], // Options for "Show entries"
-      columnDefs: [
-        { targets: [5,6,7,8], orderable: false }, // Adjust indices based on your columns
-      ],
-      language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search..."
-      }
-    });
-  }
+  $('#data-table').DataTable({
+    paging: true,
+    searching: true,
+    ordering: true,
+    info: false,
+    autoWidth: false,
+    pageLength: 25, // Default number of rows per page
+    lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]], // Options for "Show entries"
+    columnDefs: [
+      { targets: [5, 6, 7, 8], orderable: false }, // Adjust indices based on your columns
+    ],
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search..."
+    }
+  });
+}
 
 // Event listener for category tabs
 document.querySelectorAll('.category-tab').forEach(tab => {
