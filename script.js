@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       allData = data.map(item => {
-        let category = (item['CATEGORY'] || '').trim();
+        let category = (item['CONSOLE'] || '').trim();
         let manufacturer = '';
         let platform = '';
 
@@ -70,7 +70,7 @@ function createTable(data) {
   table.id = 'data-table';
 
   // Define headers, adding '#' as the first column
-  const headers = ['#', 'NAME', 'REGION', 'CATEGORY', 'BOX', 'MANUAL', 'TESTED', 'FINISHED', 'CONDITION', 'PRICE', 'SOURCE', 'NOTES'];
+  const headers = ['#', 'NAME', 'REGION', 'CONSOLE', 'BOX', 'MAN', 'TEST', 'END', '/10', 'PRICE', 'SOURCE', 'NOTES'];
 
   // Create table header
   const thead = document.createElement('thead');
@@ -97,14 +97,14 @@ function createTable(data) {
       if (header === '#') {
         // Add dynamic count
         cell.textContent = index + 1;
-      } else if (['BOX', 'MANUAL', 'TESTED', 'FINISHED'].includes(header)) {
+      } else if (['BOX', 'MAN', 'TEST', 'END'].includes(header)) {
         cell.classList.add('icon-cell');
         if ((item[header] || '').toLowerCase() === 'x') {
           cell.style.backgroundColor = '#d6eaf8'; // Soft pastel blue for yes
         } else {
           cell.style.backgroundColor = '#f5eef8'; // Very light pastel grey-pink for no
         }
-      } else if (header === 'CONDITION') {
+      } else if (header === '/10') {
         cell.classList.add('icon-cell');
         const condition = parseInt(item[header]);
         if (isNaN(condition)) {
@@ -147,7 +147,7 @@ function initializeDataTable() {
     pageLength: 25, // Default number of rows per page
     lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]], // Options for "Show entries"
     columnDefs: [
-      { targets: [4, 5, 6, 7, 8], orderable: false }, // Adjust indices based on your columns
+      { targets: [4, 5, 6, 7, 8, 9, 10, 11], orderable: false }, // Adjust indices based on your columns
     ],
     language: {
       search: "_INPUT_",
@@ -235,6 +235,10 @@ function filterData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize the manufacturer tabs event listeners
-  document.querySelectorAll('.manufacturer-tab').forEach(tab => tab.click());
+  // Set "All" tab as the active tab initially without triggering click events
+  const allTab = document.querySelector('.manufacturer-tab[data-manufacturer="All"]');
+  if (allTab) {
+    allTab.classList.add('active');
+    filterData(); // Manually filter data to display all initially
+  }
 });

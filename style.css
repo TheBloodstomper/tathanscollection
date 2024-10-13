@@ -86,21 +86,6 @@ body {
   cursor: pointer;
 }
 
-/* Center align specific columns and set equal width */
-.table th:nth-child(5),
-.table td:nth-child(5),
-.table th:nth-child(6),
-.table td:nth-child(6),
-.table th:nth-child(7),
-.table td:nth-child(7),
-.table th:nth-child(8),
-.table td:nth-child(8),
-.table th:nth-child(9),
-.table td:nth-child(9) {
-  text-align: center;
-  width: 100px; /* Set a fixed width to make these columns look like squares */
-}
-
 /* Center align Category column */
 .table th:nth-child(4),
 .table td:nth-child(4) {
@@ -285,3 +270,39 @@ body {
 .d-none {
   display: none;
 }
+
+#data-table th:nth-child(1),
+#data-table td:nth-child(1) {
+  width: 0px !important; /* Small width for the '#' column */
+}
+
+#data-table th:nth-child(2),
+#data-table td:nth-child(2) {
+  width: 250px !important; /* Set 'NAME' to be longer */
+}
+
+/* Add !important to the rest as needed */
+
+/* Center align specific columns and set equal width */
+.table th:nth-child(3),
+.table td:nth-child(3),
+.table th:nth-child(5),
+.table td:nth-child(5),
+.table th:nth-child(6),
+.table td:nth-child(6),
+.table th:nth-child(7),
+.table td:nth-child(7),
+.table th:nth-child(8),
+.table td:nth-child(8),
+.table th:nth-child(9),
+.table td:nth-child(9) {
+  text-align: center;
+  vertical-align: middle;
+  table-layout: auto;
+  width: 0px; /* Set a fixed width to make these columns smaller */
+}
+/* 
+Something's preventing my css to work..... And I can't get what it is.
+It looks like some setting wants the width to be always AT LEAST big enough for the text to fit in.
+Which overlaps my settings, even if a case is 0px. 
+*/
