@@ -1,10 +1,11 @@
-/* Import Google Fonts */
+/* Import Google Fonts */ 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 /* Global Styles */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f8f9fa;
+  color: #343a40;
   margin: 0;
 }
 
@@ -29,12 +30,37 @@ body {
   text-align: center;
 }
 
+/* Button Styles */
+.btn-block {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-block:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-block:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
 /* Table Styles */
 .table {
   width: 100%;
   margin-top: 20px;
   background-color: #fff;
   border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table thead th {
@@ -58,6 +84,67 @@ body {
 .table tbody tr:hover {
   background-color: #e9ecef;
   cursor: pointer;
+}
+
+/* Center align specific columns and set equal width */
+.table th:nth-child(5),
+.table td:nth-child(5),
+.table th:nth-child(6),
+.table td:nth-child(6),
+.table th:nth-child(7),
+.table td:nth-child(7),
+.table th:nth-child(8),
+.table td:nth-child(8),
+.table th:nth-child(9),
+.table td:nth-child(9) {
+  text-align: center;
+  width: 100px; /* Set a fixed width to make these columns look like squares */
+}
+
+/* Center align Category column */
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Condition Gradient Styling */
+.table td[data-label='Condition'] {
+  font-weight: bold;
+}
+
+.table td.condition-0 {
+  background-color: #f8c8c8; /* Pastel Red */
+}
+.table td.condition-1 {
+  background-color: #f7d1c9; /* Light Pastel Red */
+}
+.table td.condition-2 {
+  background-color: #f6dbcc; /* Very Soft Pink */
+}
+.table td.condition-3 {
+  background-color: #f5e3d0; /* Light Peach */
+}
+.table td.condition-4 {
+  background-color: #f4eccf; /* Pastel Yellow */
+}
+.table td.condition-5 {
+  background-color: #f2f4c9; /* Soft Yellow-Green */
+}
+.table td.condition-6 {
+  background-color: #e6f3cd; /* Light Pastel Green */
+}
+.table td.condition-7 {
+  background-color: #d1e9d1; /* Soft Mint Green */
+}
+.table td.condition-8 {
+  background-color: #bfe0d5; /* Pastel Aquamarine */
+}
+.table td.condition-9 {
+  background-color: #aed8cd; /* Muted Pastel Teal */
+}
+.table td.condition-10 {
+  background-color: #9acfb6; /* Deep Pastel Green */
 }
 
 /* Icon Styles */
@@ -115,37 +202,48 @@ body {
   }
 }
 
-
-
 /* Category Tabs */
-.nav-tabs .nav-link {
-  color: #343a40;
-  font-weight: 500;
-}
-
-.nav-tabs .nav-link.active {
-  color: #495057;
-  background-color: #e9ecef;
-  border-color: #dee2e6 #dee2e6 #fff;
-}
-
-.nav-tabs .nav-link:hover {
-  border-color: #dee2e6 #dee2e6 #fff;
-}
-
-/* Manufacturer, Platform, and Subcategory Tabs */
+.nav-tabs .nav-link,
 .nav-pills .nav-link {
-  margin-right: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
+.nav-tabs .nav-link.active,
 .nav-pills .nav-link.active {
   background-color: #007bff;
-  color: white;
+  color: #fff;
 }
 
+.nav-tabs .nav-link:hover,
 .nav-pills .nav-link:hover {
   background-color: #0056b3;
-  color: white;
+  color: #fff;
+}
+
+#videogames-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+#category-tabs, #manufacturer-tabs, #platform-tabs, #subcategory-tabs {
+  justify-content: center;
+}
+
+.nav-tabs, .nav-pills {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#data-list {
+  margin-top: 30px;
 }
 
 /* Center-align the count column */

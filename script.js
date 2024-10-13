@@ -2,37 +2,29 @@
 
 // Global variables
 let allData = [];
-let selectedCategory = 'All';
 let selectedManufacturer = 'All';
 let selectedPlatform = 'All';
-let selectedSubcategory = 'All';
 
 // Manufacturer to Platform mapping
 const manufacturerPlatforms = {
   'NINTENDO': ['NES', 'SNES', 'N64', 'GC', 'Wii', 'WiiU', 'Switch', 'GAMEBOY', 'GAMEBOY COLOR', 'GAMEBOY ADVANCE', 'DS', '3DS'],
-  'MICROSOFT': ['XBOX', 'XBOX 360', 'XBOX ONE', 'XBOX S'],
+  'MICROSOFT': ['XBOX', 'XBOX 360', 'XONE', 'XBOX S'],
   'PLAYSTATION': ['PSX', 'PS2', 'PS3', 'PS4', 'PS5', 'PSP', 'PS Vita'],
-  'SEGA': ['MASTER SYSTEM', 'MEGA DRIVE', 'SATURN', 'DREAMCAST'],
-  'SNK': ['NEO GEO AES', 'NEO GEO MVS', 'NEO GEO CD'],
-  'OTHERS': ['MSX', 'PC ENGINE', 'PC']
+  'SEGA': ['MASTER SYSTEM', 'MEGA DRIVE', 'MEGA-CD','SATURN', 'DC'],
+  'SNK': ['NEO・GEO AES', 'NEO・GEO MVS', 'NEO・GEO CD'],
+  'OTHER': ['MSX', 'PC ENGINE', 'PC']
 };
-
-// Subcategories for Books and Others
-const booksSubcategories = ['Magazines', 'Artbooks', 'Manga', 'Comics'];
-const othersSubcategories = ['Electronics', 'Figures'];
 
 // Flatten the platforms for easy lookup
 const allPlatforms = [].concat(...Object.values(manufacturerPlatforms));
 
 // Fetch data from the JSON file
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('data.json')
+  fetch('games.json')
     .then(response => response.json())
     .then(data => {
       allData = data.map(item => {
         let category = (item['CATEGORY'] || '').trim();
-        let mainCategory = '';
-        let subcategory = '';
         let manufacturer = '';
         let platform = '';
 
@@ -45,24 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
               break;
             }
           }
-          mainCategory = 'Videogames';
-        } else if (booksSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
-          // It's a Books subcategory
-          mainCategory = 'Books';
-          subcategory = category;
-        } else if (othersSubcategories.map(sc => sc.toLowerCase()).includes(category.toLowerCase())) {
-          // It's an Others subcategory
-          mainCategory = 'Others';
-          subcategory = category;
-        } else {
-          // Category is main category (Books, Others, etc.)
-          mainCategory = category;
         }
 
         return {
           ...item,
-          MAIN_CATEGORY: mainCategory,
-          SUBCATEGORY: subcategory,
           MANUFACTURER: manufacturer,
           PLATFORM: platform
         };
@@ -74,29 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => {
       console.error('Error fetching data:', error);
     });
-
-  // Handle table row click for mobile responsiveness
-  const tableRows = document.querySelectorAll('.table tbody tr');
-  tableRows.forEach(row => {
-    row.addEventListener('click', () => {
-      // Add your custom logic here if any action is needed on row click
-      console.log('Row clicked:', row);
-    });
-  });
-
-  // Add active state toggling for nav-tabs and nav-pills
-  const tabLinks = document.querySelectorAll('.nav-tabs .nav-link, .nav-pills .nav-link');
-  tabLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      // Remove active class from all siblings
-      const siblings = this.parentElement.children;
-      for (let sibling of siblings) {
-        sibling.classList.remove('active');
-      }
-      // Add active class to clicked tab
-      this.classList.add('active');
-    });
-  });
 });
 
 // Function to create the table
@@ -115,7 +70,7 @@ function createTable(data) {
   table.id = 'data-table';
 
   // Define headers, adding '#' as the first column
-  const headers = ['#', ...Object.keys(data[0]).filter(header => !['#', 'MAIN_CATEGORY', 'SUBCATEGORY', 'MANUFACTURER', 'PLATFORM'].includes(header))];
+  const headers = ['#', 'NAME', 'REGION', 'CATEGORY', 'BOX', 'MANUAL', 'TESTED', 'FINISHED', 'CONDITION', 'PRICE', 'SOURCE', 'NOTES'];
 
   // Create table header
   const thead = document.createElement('thead');
@@ -144,22 +99,27 @@ function createTable(data) {
         cell.textContent = index + 1;
       } else if (['BOX', 'MANUAL', 'TESTED', 'FINISHED'].includes(header)) {
         cell.classList.add('icon-cell');
-        const icon = document.createElement('i');
-        if (item[header] && item[header].toLowerCase() === 'x') {
-          icon.className = 'fas fa-check icon-true';
-          icon.setAttribute('title', 'Yes');
+        if ((item[header] || '').toLowerCase() === 'x') {
+          cell.style.backgroundColor = '#d6eaf8'; // Soft pastel blue for yes
         } else {
-          icon.className = 'fas fa-times icon-false';
-          icon.setAttribute('title', 'No');
+          cell.style.backgroundColor = '#f5eef8'; // Very light pastel grey-pink for no
         }
-        cell.appendChild(icon);
       } else if (header === 'CONDITION') {
         cell.classList.add('icon-cell');
-        const condition = parseInt(item[header]) || 0;
-        for (let i = 0; i < 10; i++) {
-          const star = document.createElement('i');
-          star.className = i < condition ? 'fas fa-star icon-true' : 'far fa-star icon-false';
-          cell.appendChild(star);
+        const condition = parseInt(item[header]);
+        if (isNaN(condition)) {
+          cell.textContent = '-';
+        } else {
+          cell.textContent = condition;
+          if (condition <= 3) {
+            cell.style.backgroundColor = '#f5eef8'; // Soft pastel lavender for low condition
+          } else if (condition <= 5) {
+            cell.style.backgroundColor = '#fdebd3'; // Soft pastel peach for medium-low condition
+          } else if (condition <= 7) {
+            cell.style.backgroundColor = '#d6eaf8'; // Soft pastel blue for medium-high condition
+          } else {
+            cell.style.backgroundColor = '#d5f5e3'; // Light mint green for high condition
+          }
         }
       } else {
         cell.textContent = item[header] || '-';
@@ -187,7 +147,7 @@ function initializeDataTable() {
     pageLength: 25, // Default number of rows per page
     lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]], // Options for "Show entries"
     columnDefs: [
-      { targets: [5, 6, 7, 8], orderable: false }, // Adjust indices based on your columns
+      { targets: [4, 5, 6, 7, 8], orderable: false }, // Adjust indices based on your columns
     ],
     language: {
       search: "_INPUT_",
@@ -196,135 +156,51 @@ function initializeDataTable() {
   });
 }
 
-// Event listener for category tabs
-document.querySelectorAll('.category-tab').forEach(tab => {
+// Event listener for manufacturer tabs
+document.querySelectorAll('.manufacturer-tab').forEach(tab => {
   tab.addEventListener('click', function(e) {
     e.preventDefault();
     // Remove active class from all tabs
-    document.querySelectorAll('.category-tab').forEach(tb => tb.classList.remove('active'));
+    document.querySelectorAll('.manufacturer-tab').forEach(tb => tb.classList.remove('active'));
     // Add active class to clicked tab
     this.classList.add('active');
 
-    selectedCategory = this.getAttribute('data-category');
-    selectedManufacturer = 'All';
+    selectedManufacturer = this.getAttribute('data-manufacturer');
     selectedPlatform = 'All';
-    selectedSubcategory = 'All';
 
-    // Hide all subcategory tabs initially
-    const manufacturerTabs = document.getElementById('manufacturer-tabs');
-    manufacturerTabs.classList.add('d-none');
-    manufacturerTabs.innerHTML = ''; // Clear previous manufacturers
-
+    // Hide platform tabs initially
     const platformTabs = document.getElementById('platform-tabs');
     platformTabs.classList.add('d-none');
     platformTabs.innerHTML = ''; // Clear previous platforms
 
-    const subcategoryTabs = document.getElementById('subcategory-tabs');
-    subcategoryTabs.classList.add('d-none');
-    subcategoryTabs.innerHTML = ''; // Clear previous subcategories
+    if (selectedManufacturer !== 'All') {
+      // Show platform tabs
+      platformTabs.classList.remove('d-none');
 
-    if (selectedCategory === 'Videogames') {
-      // Show manufacturer tabs
-      manufacturerTabs.classList.remove('d-none');
+      // Create 'All' platform tab
+      const allPlatTab = document.createElement('li');
+      allPlatTab.className = 'nav-item';
+      allPlatTab.innerHTML = '<a class="nav-link active platform-tab" href="#" data-platform="All">All</a>';
+      platformTabs.appendChild(allPlatTab);
 
-      // Create 'All' manufacturer tab
-      const allManuTab = document.createElement('li');
-      allManuTab.className = 'nav-item';
-      allManuTab.innerHTML = '<a class="nav-link active manufacturer-tab" href="#" data-manufacturer="All">All</a>';
-      manufacturerTabs.appendChild(allManuTab);
-
-      // Create manufacturer tabs
-      Object.keys(manufacturerPlatforms).forEach(manufacturer => {
+      // Create platform tabs
+      manufacturerPlatforms[selectedManufacturer].forEach(platform => {
         const li = document.createElement('li');
         li.className = 'nav-item';
-        li.innerHTML = `<a class="nav-link manufacturer-tab" href="#" data-manufacturer="${manufacturer}">${manufacturer}</a>`;
-        manufacturerTabs.appendChild(li);
+        li.innerHTML = `<a class="nav-link platform-tab" href="#" data-platform="${platform}">${platform}</a>`;
+        platformTabs.appendChild(li);
       });
 
-      // Add event listeners to manufacturer tabs
-      document.querySelectorAll('.manufacturer-tab').forEach(manTab => {
-        manTab.addEventListener('click', function(e) {
+      // Add event listeners to platform tabs
+      document.querySelectorAll('.platform-tab').forEach(platTab => {
+        platTab.addEventListener('click', function(e) {
           e.preventDefault();
-          // Remove active class from all manufacturer tabs
-          document.querySelectorAll('.manufacturer-tab').forEach(mt => mt.classList.remove('active'));
-          // Add active class to clicked manufacturer tab
+          // Remove active class from all platform tabs
+          document.querySelectorAll('.platform-tab').forEach(pt => pt.classList.remove('active'));
+          // Add active class to clicked platform tab
           this.classList.add('active');
 
-          selectedManufacturer = this.getAttribute('data-manufacturer');
-          selectedPlatform = 'All';
-
-          // Hide platform tabs initially
-          platformTabs.classList.add('d-none');
-          platformTabs.innerHTML = ''; // Clear previous platforms
-
-          if (selectedManufacturer !== 'All') {
-            // Show platform tabs
-            platformTabs.classList.remove('d-none');
-
-            // Create 'All' platform tab
-            const allPlatTab = document.createElement('li');
-            allPlatTab.className = 'nav-item';
-            allPlatTab.innerHTML = '<a class="nav-link active platform-tab" href="#" data-platform="All">All</a>';
-            platformTabs.appendChild(allPlatTab);
-
-            // Create platform tabs
-            manufacturerPlatforms[selectedManufacturer].forEach(platform => {
-              const li = document.createElement('li');
-              li.className = 'nav-item';
-              li.innerHTML = `<a class="nav-link platform-tab" href="#" data-platform="${platform}">${platform}</a>`;
-              platformTabs.appendChild(li);
-            });
-
-            // Add event listeners to platform tabs
-            document.querySelectorAll('.platform-tab').forEach(platTab => {
-              platTab.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Remove active class from all platform tabs
-                document.querySelectorAll('.platform-tab').forEach(pt => pt.classList.remove('active'));
-                // Add active class to clicked platform tab
-                this.classList.add('active');
-
-                selectedPlatform = this.getAttribute('data-platform');
-
-                filterData();
-              });
-            });
-          }
-
-          filterData();
-        });
-      });
-    } else if (selectedCategory === 'Books' || selectedCategory === 'Others') {
-      // Show subcategory tabs for Books and Others
-      subcategoryTabs.classList.remove('d-none');
-
-      // Create 'All' subcategory tab
-      const allSubTab = document.createElement('li');
-      allSubTab.className = 'nav-item';
-      allSubTab.innerHTML = '<a class="nav-link active subcategory-tab" href="#" data-subcategory="All">All</a>';
-      subcategoryTabs.appendChild(allSubTab);
-
-      // Get the subcategories based on the selected category
-      const subcategories = selectedCategory === 'Books' ? booksSubcategories : othersSubcategories;
-
-      // Create subcategory tabs
-      subcategories.forEach(subcat => {
-        const li = document.createElement('li');
-        li.className = 'nav-item';
-        li.innerHTML = `<a class="nav-link subcategory-tab" href="#" data-subcategory="${subcat}">${subcat}</a>`;
-        subcategoryTabs.appendChild(li);
-      });
-
-      // Add event listeners to subcategory tabs
-      document.querySelectorAll('.subcategory-tab').forEach(subTab => {
-        subTab.addEventListener('click', function(e) {
-          e.preventDefault();
-          // Remove active class from all subcategory tabs
-          document.querySelectorAll('.subcategory-tab').forEach(st => st.classList.remove('active'));
-          // Add active class to clicked subcategory tab
-          this.classList.add('active');
-
-          selectedSubcategory = this.getAttribute('data-subcategory');
+          selectedPlatform = this.getAttribute('data-platform');
 
           filterData();
         });
@@ -338,21 +214,14 @@ document.querySelectorAll('.category-tab').forEach(tab => {
 function filterData() {
   let filteredData = [];
 
-  if (selectedCategory === 'All') {
+  if (selectedManufacturer === 'All') {
     filteredData = allData;
   } else {
-    filteredData = allData.filter(item => (item['MAIN_CATEGORY'] || '').trim().toLowerCase() === selectedCategory.toLowerCase());
+    filteredData = allData.filter(item => (item['MANUFACTURER'] || '').trim().toLowerCase() === selectedManufacturer.toLowerCase());
   }
 
-  if (selectedCategory === 'Videogames') {
-    if (selectedManufacturer !== 'All') {
-      filteredData = filteredData.filter(item => (item['MANUFACTURER'] || '').trim().toLowerCase() === selectedManufacturer.toLowerCase());
-    }
-    if (selectedManufacturer !== 'All' && selectedPlatform !== 'All') {
-      filteredData = filteredData.filter(item => (item['PLATFORM'] || '').trim().toLowerCase() === selectedPlatform.toLowerCase());
-    }
-  } else if ((selectedCategory === 'Books' || selectedCategory === 'Others') && selectedSubcategory !== 'All') {
-    filteredData = filteredData.filter(item => (item['SUBCATEGORY'] || '').trim().toLowerCase() === selectedSubcategory.toLowerCase());
+  if (selectedPlatform !== 'All') {
+    filteredData = filteredData.filter(item => (item['PLATFORM'] || '').trim().toLowerCase() === selectedPlatform.toLowerCase());
   }
 
   // Destroy existing DataTable
@@ -364,3 +233,8 @@ function filterData() {
   createTable(filteredData);
   initializeDataTable();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize the manufacturer tabs event listeners
+  document.querySelectorAll('.manufacturer-tab').forEach(tab => tab.click());
+});

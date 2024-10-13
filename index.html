@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- DataTables CSS -->
@@ -24,7 +25,32 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container">
+  <div class="container text-center mt-5">
+    <h2>Select a Category</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <a href="arcade.html" id="arcade-link" class="btn btn-primary btn-block">Arcade</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="videogames.html" id="videogames-link" class="btn btn-primary btn-block">Videogames</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="consoles.html" id="consoles-link" class="btn btn-primary btn-block">Consoles</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="electronics.html" id="electronics-link" class="btn btn-primary btn-block">Electronics</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="books.html" id="books-link" class="btn btn-primary btn-block">Books</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="others.html" id="others-link" class="btn btn-primary btn-block">Others</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videogames Content -->
+  <div class="container d-none" id="videogames-section">
     <!-- Category Tabs -->
     <ul class="nav nav-tabs mt-4" id="category-tabs">
       <li class="nav-item">
