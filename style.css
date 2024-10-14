@@ -306,3 +306,64 @@ Something's preventing my css to work..... And I can't get what it is.
 It looks like some setting wants the width to be always AT LEAST big enough for the text to fit in.
 Which overlaps my settings, even if a case is 0px. 
 */
+
+/* Arcade Item Styles */
+.arcade-item {
+  margin-bottom: 30px;
+}
+
+.arcade-item .card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.arcade-item .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.arcade-item .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.arcade-item .card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.arcade-item .card-text {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .arcade-item .card-img-top {
+    height: 150px;
+  }
+}
+
+#type-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+/* Center the type menu (Artbook, Manga, etc.) */
+#book-type-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+/* Make all book table columns equal width */
+#book-data-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#book-data-table th, #book-data-table td {
+  text-align: center; /* Optional: Centers the text in each column */
+}
+

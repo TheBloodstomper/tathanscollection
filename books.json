@@ -1,0 +1,605 @@
+[
+    {
+        "NAME": "THE GENGA ART OF DORAEMON",
+        "AUTHOR": "Fujiko F Fujio",
+        "EDITOR": "Shueisha",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "CD Japan",
+        "NOTES": "x"
+    },
+    {
+        "NAME": "JOJO magazine",
+        "AUTHOR": "JP",
+        "EDITOR": "Shueisha",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "BLEACH EX. OFFICIAL CATALOG THE BLACK BROCHURE",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "] The Art of Spirited Away (Ghibli The Art Series)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Jump GIGA SPRING 2020",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "DRAGON BALL Cho Super Hero (JUMP J BOOKS)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Jump GIGA SUMMER 2022",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Shin Ultraman Design Works (Hideaki Anno)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Haikyuu!! 10th Chronicle [LIMITED EDITION]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Ranking of Kings Complete Setting Book",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "De Ho Gallery",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Haikyuu!! Complete Illustration Book: Owari to Hajimari",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "CONTINUE Vol.55",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "The Art of Nausicaa of the Valley of the Wind (Ghibli The Art Series)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Mikimoto Haruhiko Character Works",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Persona 5 Official Setting Art Book",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Akira Toriyama Dragon Quest Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Studio Ghibli Complete Storyboard Collection 13 Spirited Away",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Dragon Ball Cho Gashu (Akira Toriyama)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Berserk (Movie) Bijutsu",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Berserk (Movie) Character",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Gundam Thunderbolt Art Works",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Rurouni Kenshin Dai 1 Wa Fukusei Genko Box: Ken x Shin",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Shoji Kawamori Macross Designer's Note",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Ryoichi Ikegami Art Works [MALE/FEMALE]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Igyo Sekai (Junji Ito)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Iso Mitsuo Animation Works Vol. 1",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Ghost in the Shell - Archives -",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Ultra Jump 2023 - 19",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "JOJOVELLER [2023]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "JOJO A-GO!GO! [2023]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "JOJO magazine WINTER 2022 ",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "The Art of The Boy and the Heron",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "HIDETAKA TENJIN'S Artistry of the First Macross [DECULTURE]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Studio Ghibli Complete Storyboard Collection 23 Boy and the Heron",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Backgammon - Kazuya Minekura Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Backgammon 2 - Kazuya Minekura Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Backgammon 3 - Kazuya Minekura Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "CLAMP: Magic Knight Rayearth #1 [ILLUSTRATIONS COLLECTION]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "CLAMP: Magic Knight Rayearth #2 [ILLUSTRATIONS COLLECTION]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "The Promised Neverland Artbook World",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Parrot (Tsukasa Hojo)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Koike (Studio Break)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "HOW to ART - Vol.1 Basic Lesson",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "HOW to ART - Vol. 2 Mixed Media Lesson",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MAGAZINE",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Sentimental Graffiti - Image Artworks (Tomohisa Kai)",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Katsura Masakazu Illustrations - 4C [3-SET]",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Hisashi Hirai - Illustration works 1",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Hojo Tsukasa 20th Anniversary Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Hojo Tsukasa - 25th Anniversary ",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Tsukasa Hojo Illustrations",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Hojo Tsukasa short stories - Including 6 stories",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "MANGA",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "Hokuto no Ken - 40th Anniversary Exhibition",
+        "AUTHOR": "JP",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ARTBOOK",
+        "SOURCE": "",
+        "NOTES": ""
+    },
+    {
+        "NAME": "SHIKISHI Casval",
+        "AUTHOR": "Kotobuki Tsubasa",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Maison Wa 2023"
+    },
+    {
+        "NAME": "SHIKISHI Sakura",
+        "AUTHOR": "Yokota Mamoru",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Maison Wa 2023"
+    },
+    {
+        "NAME": "SHIKISHI Uniqlo Anshin-Kun",
+        "AUTHOR": "Iso Mitsuo",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Connichi 2023"
+    },
+    {
+        "NAME": "SHIKISHI Uniqlo Densuke",
+        "AUTHOR": "Iso Mitsuo",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Connichi 2023"
+    },
+    {
+        "NAME": "SHIKISHI Shin-Chan",
+        "AUTHOR": "Kutsuna Kenichi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Connichi 2023"
+    },
+    {
+        "NAME": "SHIKISHI Hime Yarizakura",
+        "AUTHOR": "Ryo-Timo",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Connichi 2023"
+    },
+    {
+        "NAME": "(---)",
+        "AUTHOR": "SHIKISHI",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Connichi 2023"
+    },
+    {
+        "NAME": "SHIKISHI Mikasa",
+        "AUTHOR": "Araki Tetsuro",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Mia 2023"
+    },
+    {
+        "NAME": "SHIKISHI Mass Production Eva",
+        "AUTHOR": "Honda Takeshi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Nantes 2023"
+    },
+    {
+        "NAME": "SHIKISHI Noriko",
+        "AUTHOR": "Honda Takeshi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Nantes 2023"
+    },
+    {
+        "NAME": "SHIKISHI Sailor Mars",
+        "AUTHOR": "Kagawa Hisashi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Com. Peter"
+    },
+    {
+        "NAME": "SHIKISHI Joseph Joestar",
+        "AUTHOR": "Matsuyama Hiroshi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "JE 2023"
+    },
+    {
+        "NAME": "SHIKISHI Birth SFX",
+        "AUTHOR": "Kameda Yoshimichi",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "MiA 2023"
+    },
+    {
+        "NAME": "SHIKISHI Tathan",
+        "AUTHOR": "Ryo-Timo",
+        "EDITOR": "",
+        "REGION": "JP",
+        "TYPE": "ART",
+        "SOURCE": "",
+        "NOTES": "Girls Bar 2024"
+    }
+]

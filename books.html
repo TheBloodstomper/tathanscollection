@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa de Tathan</title>
+  <!-- Responsive Design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Casa de Tathan</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Manufacturer Tabs -->
+    <ul class="nav nav-tabs mt-4" id="book-type-tabs">
+        <li class="nav-item">
+          <a class="nav-link active type-tab" href="#" data-type="All">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="MANGA">MANGA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="COMICS">COMICS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="ARTBOOK">ARTBOOK</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="MAGAZINE">MAGAZINE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="NOVEL">NOVEL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="GUIDE">GUIDE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link type-tab" href="#" data-type="OTHERS">OTHERS</a>
+        </li>
+      </ul>      
+
+<!-- Data List for Books -->
+<div id="data-list" class="mt-4">
+    <table id="book-data-table" class="table table-bordered table-hover">
+      <!-- Your table content here -->
+    </table>
+  </div>  
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="books.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+        "NAME": "CHEWLIX",
+        "Image": "images/Chewlix.webp",
+        "EXTRA": "Réparer pied",
+        "SOURCE": "Chine (2020)",
+        "PRIX": "Cadeau Papa "
+    },
+    {
+        "NAME": "SEGA Blast City",
+        "Image": "images/Blast.webp",
+        "EXTRA": "Pas d'écran",
+        "SOURCE": "Kleinanzeigen 2024",
+        "PRIX": "950.00 € "
+    },
+    {
+        "NAME": "SEGA Initial D The Arcade",
+        "Image": "images/IDAC1.webp",
+        "EXTRA": "Player 1 - IDZ conv.",
+        "SOURCE": "Ronnie (2023)",
+        "PRIX": "3,977.50 € "
+    },
+    {
+        "NAME": "SEGA Initial D The Arcade",
+        "Image": "images/IDAC2.webp",
+        "EXTRA": "Player 2 - IDZ conv.",
+        "SOURCE": "Ronnie (2023)",
+        "PRIX": "3,977.50 € "
+    },
+    {
+        "NAME": "Sega ALL.Net P-ras MULTI version 3",
+        "Image": "images/Pras3.webp",
+        "EXTRA": "",
+        "SOURCE": "Ronnie (2023)",
+        "PRIX": "1,800.00 € "
+    },
+    {
+        "NAME": "Cristina's UNICO SNK NEOGEO MVSX",
+        "Image": "images/MVSX.webp",
+        "EXTRA": "Mister FPGA",
+        "SOURCE": "Amazon (2023)",
+        "PRIX": "720.00 € "
+    }
+]
