@@ -367,3 +367,77 @@ Which overlaps my settings, even if a case is 0px.
   text-align: center; /* Optional: Centers the text in each column */
 }
 
+#book-data-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#book-data-table th, #book-data-table td {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;    /* Hide overflow if content is too large */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+
+#book-data-table th:nth-child(2), #book-data-table td:nth-child(2) {
+  width: 25%; /* Give 'NAME' more space */
+}
+
+#book-data-table th:nth-child(3), #book-data-table td:nth-child(3),
+#book-data-table th:nth-child(5), #book-data-table td:nth-child(5),
+#book-data-table th:nth-child(6), #book-data-table td:nth-child(6) {
+  width: 15%; /* Equal width for other important columns */
+}
+
+#book-data-table th:nth-child(4), #book-data-table td:nth-child(4),
+#book-data-table th:nth-child(7), #book-data-table td:nth-child(7),
+#book-data-table th:nth-child(8), #book-data-table td:nth-child(8) {
+  width: 10%; /* Smaller width for less important columns */
+}
+
+#book-data-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  #book-data-table, #book-data-table tbody, #book-data-table tr, #book-data-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  #book-data-table td {
+    padding-left: 50%;
+    position: relative;
+  }
+  
+  #book-data-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+}
+
+#book-data-table th:nth-child(2), #book-data-table td:nth-child(2) {
+  width: 25%; /* Set a reasonable width for 'NAME' */
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Ensure words wrap properly */
+  text-align:left;
+}
+
+/* Initially, table rows are at normal height */
+#book-data-table tbody tr {
+  transition: all 0.3s ease-in-out; /* Add smooth animation */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Expanded row style */
+#book-data-table tbody tr.expandable-row {
+  height: auto; /* Allows the row to expand to fit all content */
+}
+
+/* Optionally, add a highlight when expanded */
+#book-data-table tbody tr.expandable-row {
+  background-color: #f0f8ff; /* Light background when expanded */
+}
