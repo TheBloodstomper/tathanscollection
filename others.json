@@ -1,0 +1,100 @@
+[
+    {
+        "NAME": "Casval",
+        "+": "Kotobuki Tsubasa",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Maison Wa 2023",
+        "PRICE": "250 €"
+    },
+    {
+        "NAME": "Sakura",
+        "+": "Yokota Mamoru",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Maison Wa 2023",
+        "PRICE": "250 €"
+    },
+    {
+        "NAME": "Uniqlo Anshin-Kun",
+        "+": "Iso Mitsuo",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Connichi 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Uniqlo Densuke",
+        "+": "Iso Mitsuo",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Connichi 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Shin-Chan",
+        "+": "Kutsuna Kenichi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Connichi 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Hime Yarizakura",
+        "+": "Ryo-Timo",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Connichi 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "(---)",
+        "+": "SHIKISHI",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Connichi 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Mikasa",
+        "+": "Araki Tetsuro",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Mia 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Mass Production Eva",
+        "+": "Honda Takeshi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Nantes 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Noriko",
+        "+": "Honda Takeshi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Nantes 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Sailor Mars",
+        "+": "Kagawa Hisashi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Com. Peter",
+        "PRICE": "250 €"
+    },
+    {
+        "NAME": "Joseph Joestar",
+        "+": "Matsuyama Hiroshi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "JE 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Birth SFX",
+        "+": "Kameda Yoshimichi",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "MiA 2023",
+        "PRICE": "GIFT"
+    },
+    {
+        "NAME": "Tathan",
+        "+": "Ryo-Timo",
+        "TYPE": "SHIKISHI",
+        "SOURCE": "Girls Bar 2024",
+        "PRICE": "GIFT"
+    }
+]
